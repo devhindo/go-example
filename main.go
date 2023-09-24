@@ -3,26 +3,29 @@ package main
 import (
 	"os/exec"
 	"runtime"
+	"fmt"
 )
 
 func main() {
-	link := "https://www.google.com"
-	open(link)
+    err := OpenDefault("F:\\task.txt")
+    if err != nil {
+        fmt.Println(err)
+    }
 }
 
-func open(url string) error {
-    var cmd string
-    var args []string
+func OpenDefault(fileOrURL string) error {
+	var cmd string
+	var args []string
 
-    switch runtime.GOOS {
-    case "windows":
-        cmd = "cmd"
-        args = []string{"/c", "start"}
-    case "darwin":
-        cmd = "open"
-    default: // "linux", "freebsd", "openbsd", "netbsd"
-        cmd = "xdg-open"
-    }
-    args = append(args, url)
-    return exec.Command(cmd, args...).Start()
+	switch runtime.GOOS {
+	case "windows":
+        cmd = "rundll32"
+        args = []string{"url.dll,FileProtocolHandler"}
+	case "darwin":
+		cmd = "open"
+	default: // "linux", "freebsd", "openbsd", "netbsd"
+		cmd = "xdg-open"
+	}
+	args = append(args, fileOrURL)
+	return exec.Command(cmd, args...).Start()
 }
