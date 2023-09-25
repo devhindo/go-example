@@ -1,14 +1,18 @@
 package main
 
 import (
-	"os/exec"
-	"runtime"
 	"fmt"
+	"os"
 )
 
 func main() {
 
-    fmt.Println("idk")
-
+	if len(os.Args) < 2 {
+		fmt.Println("Usage: ./main <filename>")
+		return
+	} else {
+		filename := os.Args[1]
+		fmt.Println("Filename:", filename)
+	}
 }
 
