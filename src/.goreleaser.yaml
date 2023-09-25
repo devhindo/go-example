@@ -1,3 +1,4 @@
+project_name: x
 # This is an example .goreleaser.yml file with some sensible defaults.
 # Make sure to check the documentation at https://goreleaser.com
 
@@ -35,8 +36,8 @@ archives:
     format_overrides:
       - goos: windows
         format: zip
-    files:
-      - bin/{{.ProjectName}}: x/bin/{{.ProjectName}}
+    wrap_in_directory: x/bin
+
 
 changelog:
   sort: asc
