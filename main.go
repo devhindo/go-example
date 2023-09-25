@@ -14,6 +14,7 @@ func main() {
 		filename := os.Args[1]
 		fmt.Println("Filename:", filename)
 	}
+	dev()
 }
 
 func dev() {}
