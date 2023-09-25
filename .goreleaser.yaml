@@ -36,5 +36,3 @@ archives:
       - goos: windows
         format: zip
 
-changelog:
-
