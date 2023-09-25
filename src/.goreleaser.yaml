@@ -14,6 +14,8 @@ before:
     - go generate ./...
 
 builds:
+  dir: {{ .ProjectName }}
+  binary: x./bin/{{ .ProjectName }}
   - env:
       - CGO_ENABLED=0
     goos:
