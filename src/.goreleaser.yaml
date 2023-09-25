@@ -36,12 +36,8 @@ archives:
     format_overrides:
       - goos: windows
         format: zip
-    wrap_in_directory: x/bin
+    wrap_in_directory: x
 
 
 changelog:
-  sort: asc
-  filters:
-    exclude:
-      - "^docs:"
-      - "^test:"
+  skip: true
