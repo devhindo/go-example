@@ -14,8 +14,6 @@ before:
     - go generate ./...
 
 builds:
-  dir: {{ .ProjectName }}
-  binary: x./bin/{{ .ProjectName }}
   - env:
       - CGO_ENABLED=0
     goos:
@@ -37,6 +35,8 @@ archives:
     format_overrides:
       - goos: windows
         format: zip
+    files:
+      - bin/{{.ProjectName}}: x/bin/{{.ProjectName}}
 
 changelog:
   sort: asc
