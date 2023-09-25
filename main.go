@@ -16,6 +16,4 @@ func main() {
 	}
 }
 
-
-
-
+func dev() {}
