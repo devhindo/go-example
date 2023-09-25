@@ -15,7 +15,9 @@ func main() {
 		fmt.Println("Filename:", filename)
 	}
 	dev()
-
+	branch()
 }
 
 func dev() {}
+
+func branch() {}
