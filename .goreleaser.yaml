@@ -19,7 +19,6 @@ builds:
     goos:
       - linux
       - windows
-      - mac
 
 archives:
   - format: tar.gz
